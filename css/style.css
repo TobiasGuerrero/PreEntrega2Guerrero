@@ -9,7 +9,14 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
+.link__hover {
+  display: flex;
+  justify-content: center;
+}
+.link__hover--juegos {
+  color: white;
+  text-decoration: none;
+}
 /* HEADER */
 header {
   background-color: #ff5050;
@@ -51,7 +58,7 @@ footer {
 main {
   margin: 1rem;
 }
-.main__h1 {
+.main__h {
   margin: 2rem 0 2rem 0;
   color: white;
   display: flex;
@@ -59,6 +66,8 @@ main {
 }
 .main__img {
   max-width: 100%;
+  transition: 0.5s;
+  object-fit: cover;
 }
 .main__contenedor {
   width: 100%;
@@ -73,6 +82,7 @@ main {
 .main__col a {
   color: white;
   text-decoration: none;
+  overflow: hidden;
 }
 .main__p {
   color: white;
@@ -87,6 +97,7 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  font-size: 100%;
 }
 .pag__search {
   display: flex;
@@ -100,17 +111,25 @@ main {
 }
 .juegos__img {
   width: 100%;
+  transition: 0.5s;
+  object-fit: cover;
 }
 .juegos__row {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 2rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+.juegos__row p {
+  margin: 0.5rem 0 0 0;
+  height: 100%;
 }
 .juegos__col {
   display: grid;
   grid-template-columns: 1fr;
   color: white;
   text-decoration: none;
+  width: 100%;
 }
 .juegos__col a {
   color: white;
@@ -120,6 +139,9 @@ main {
   display: flex;
   flex-direction: column;
 }
+.juegos__titulo a {
+  font-size: 1.5rem;
+}
 /* GUIAS */
 .main__guias {
   display: flex;
@@ -128,6 +150,8 @@ main {
 }
 .guias__img {
   max-width: 100%;
+  transition: 0.5s;
+  object-fit: cover;
 }
 .guias__col {
   display: flex;
@@ -161,6 +185,9 @@ main {
   max-width: 90%;
   margin-bottom: 1.5rem;
 }
+.foro__pa p {
+  font-size: 1.2rem;
+}
 
 /* CONTACTOS */
 .main__contacto {
@@ -185,7 +212,7 @@ main {
   max-width: 82%;
 }
 
-/* @MEDIA */
+/* @MEDIA TABLET */
 @media screen and (min-width: 768px) {
   /* FOOTER */
   body {
@@ -212,18 +239,45 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
-  /* JUEGOS */
-  .juegos__row {
-    flex-direction: row;
+  .main__img:hover {
+    transform: scale(1.2);
   }
-  .juegos__row p {
-    margin: 1.2rem 0 0.2rem 1rem;
-  }
-  .juegos__img {
-    width: 35vw;
-  }
+
   /* GUIAS */
   .guias__contenedor {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .guias__img:hover {
+    transform: scale(1.2);
+  }
+  .guias__col a {
+    overflow: hidden;
+  }
+}
+
+/* @MEDIA DESKTOP */
+@media screen and (min-width: 1000px) {
+  .link__hover:hover {
+    color: #ff5050;
+  }
+  .link__hover--juegos:hover {
+    color: #ff5050;
+  }
+  /* JUEGOS */
+  .juegos__row {
+    grid-template-columns: 1fr 2fr;
+  }
+  .juegos__row p {
+    margin: 0 0 0 0.5rem;
+    width: 100%;
+  }
+  .juegos__img {
+    width: 100%;
+  }
+  .juegos__img:hover {
+    transform: scale(1.2);
+  }
+  .juegos__row a {
+    overflow: hidden;
   }
 }
